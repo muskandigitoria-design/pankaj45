@@ -3,163 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAY2LAABH™ | Elite Trading Mastery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>PANKAJ BHARDWAJ | WAY2LAABH™</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold-primary: #D4AF37;
-            --gold-gradient: linear-gradient(135deg, #e5c06d 0%, #b8932d 100%);
-            --bg-dark: #000000;
-            --card-glass: rgba(255, 255, 255, 0.05);
+            --gold-gradient: linear-gradient(180deg, #FFE7A3 0%, #D4AF37 50%, #8A6D1D 100%);
+            --bg-black: #000000;
+            --card-bg: rgba(25, 25, 25, 0.7);
+            --text-gray: #b0b0b0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Poppins', sans-serif; 
+        }
 
         body {
-            background-color: var(--bg-dark);
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
-            color: #fff;
+            background-color: var(--bg-black);
+            /* Creating the soft gold glow spots from the image background */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at center, #111111 0%, #000000 100%);
+            color: #ffffff;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow-x: hidden;
+            padding: 20px;
         }
 
-        .main-container {
+        .main-wrapper {
             width: 100%;
-            max-width: 600px;
-            padding: 20px;
+            max-width: 550px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
 
-        /* Centered Logo from reference */
-        .brand-logo {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 30px;
+        /* Top Circular Logo */
+        .logo-box {
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             border: 2px solid var(--gold-primary);
-            padding: 10px;
+            padding: 5px;
             background: #050505;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .logo-box img {
+            width: 90%;
+            height: 90%;
             object-fit: contain;
         }
 
+        /* Title Sections */
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
+            font-weight: 700;
             letter-spacing: 2px;
             color: var(--gold-primary);
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
 
-        .subtitle {
+        .sub-title {
             font-size: 0.9rem;
             letter-spacing: 4px;
             color: #ffffff;
             opacity: 0.8;
             margin-bottom: 40px;
             text-transform: uppercase;
+            font-weight: 500;
         }
 
-        /* Centered Stats Card like the image */
-        .glass-box {
-            background: var(--card-glass);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Central Information Card */
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
-            padding: 40px 30px;
-            border-radius: 24px;
+            padding: 45px 30px;
+            border-radius: 25px;
             width: 100%;
             margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
-        .glass-box p {
-            color: #ccc;
-            font-size: 1rem;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        .stats-row {
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 25px;
-        }
-
-        .stat-item h3 { color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 5px; }
-        .stat-item p { font-size: 0.7rem; text-transform: uppercase; color: #888; margin: 0; }
-
-        /* Gold Gradient Button */
-        .btn-gold {
-            background: var(--gold-gradient);
-            color: #000;
-            width: 100%;
-            padding: 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
+        .glass-card p {
             font-size: 1.1rem;
+            color: #ffffff;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .glass-card p b {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* Stats Row */
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .stat-item h3 {
+            color: var(--gold-primary);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-item p {
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: 0.3s;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            color: var(--text-gray);
+            margin: 0;
+            font-weight: 600;
         }
 
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        /* The Glowing Gold Button */
+        .btn-join {
+            background: var(--gold-gradient);
+            color: #000000;
+            width: 100%;
+            max-width: 380px;
+            padding: 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            display: block;
         }
 
-        footer { margin-top: 50px; font-size: 0.7rem; color: #666; }
-        .agency { margin-top: 10px; font-weight: 600; }
-        .agency a { color: var(--gold-primary); text-decoration: none; }
+        .btn-join:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 45px rgba(212, 175, 55, 0.6);
+        }
 
+        /* Footer Info */
+        footer {
+            margin-top: 50px;
+            font-size: 0.7rem;
+            color: var(--text-gray);
+            letter-spacing: 1px;
+        }
+
+        .agency-info {
+            margin-top: 12px;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        .agency-info span {
+            color: var(--gold-primary);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 480px) {
             h1 { font-size: 1.8rem; }
-            .brand-logo { width: 100px; height: 100px; }
+            .sub-title { font-size: 0.75rem; letter-spacing: 3px; }
+            .glass-card { padding: 35px 20px; }
+            .stat-item h3 { font-size: 1.3rem; }
+            .btn-join { font-size: 1rem; padding: 18px; }
         }
     </style>
 </head>
 <body>
 
-<div class="main-container">
-    <img src="https://via.placeholder.com/150/000/D4AF37?text=PB" alt="WAY2LAABH" class="brand-logo">
+    <div class="main-wrapper">
+        <div class="logo-box">
+            <img src="https://via.placeholder.com/150/000/D4AF37?text=PB" alt="WAY2LAABH Logo">
+        </div>
 
-    <h1>PANKAJ BHARDWAJ</h1>
-    <div class="subtitle">WAY2LAABH™ Mastery</div>
+        <h1>PANKAJ BHARDWAJ</h1>
+        <div class="sub-title">WAY2LAABH™ MASTERY</div>
 
-    <div class="glass-box">
-        <p>Master the markets and crush the odds. Join us for <b>real-time analysis</b> and exclusive institutional-grade trading strategies.</p>
-        
-        <div class="stats-row">
-            <div class="stat-item">
-                <h3>12.4k+</h3>
-                <p>Winners</p>
-            </div>
-            <div class="stat-item">
-                <h3>98.2%</h3>
-                <p>Hit Rate</p>
-            </div>
-            <div class="stat-item">
-                <h3>LIVE</h3>
-                <p>Updates</p>
+        <div class="glass-card">
+            <p>Master the market and crush the odds. Join us for <b>real-time predictive hacks</b> and exclusive winning strategies.</p>
+            
+            <div class="divider"></div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>12.4k+</h3>
+                    <p>Winners</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98.2%</h3>
+                    <p>Hit Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3>LIVE</h3>
+                    <p>Hacks</p>
+                </div>
             </div>
         </div>
+
+        <a href="https://t.me/+9Idal1eJo4kyMGM1" class="btn-join">Join The Winning Streak</a>
+
+        <footer>
+            <p>✦ 18+ | PLAY RESPONSIBLY ✦</p>
+            <p class="agency-info">Ads managed by <span>Nexgroww Agency</span></p>
+        </footer>
     </div>
-
-    <a href="https://t.me/+9Idal1eJo4kyMGM1" class="btn-gold">Join The Winning Streak</a>
-
-    <footer>
-        <p>✦ 18+ | TRADE RESPONSIBLY ✦</p>
-        <div class="agency">
-            Ads managed by <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank">NEXGROWW AGENCY</a>
-        </div>
-    </footer>
-</div>
 
 </body>
 </html>
