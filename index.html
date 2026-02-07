@@ -3,203 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PANKAJ BHARDWAJ | WAY2LAABH™</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>WAY2LAABH™ | Elite Trading Mastery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #D4AF37;
-            --gold-light: #f1d279;
-            --dark: #070b14;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --gold-primary: #D4AF37;
+            --gold-gradient: linear-gradient(135deg, #e5c06d 0%, #b8932d 100%);
+            --bg-dark: #000000;
+            --card-glass: rgba(255, 255, 255, 0.05);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        
-        body { 
-            background-color: var(--dark); 
-            color: #fff; 
-            overflow-x: hidden;
-            background: radial-gradient(circle at center, #1a2333 0%, #070b14 100%);
-        }
 
-        /* Animated Glow Backgrounds */
-        .glow {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            background: var(--gold);
-            filter: blur(150px);
-            opacity: 0.15;
-            z-index: -1;
-            border-radius: 50%;
-        }
-
-        /* Centered Layout */
-        .container {
+        body {
+            background-color: var(--bg-dark);
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            color: #fff;
             min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
             text-align: center;
         }
 
-        /* Central Image Styling */
-        .logo-wrapper {
-            position: relative;
-            margin-bottom: 30px;
-        }
-
-        .main-logo {
+        /* Centered Logo from reference */
+        .brand-logo {
             width: 120px;
             height: 120px;
-            border-radius: 50%;
-            border: 3px solid var(--gold);
-            padding: 5px;
-            background: var(--dark);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-            50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(212, 175, 55, 0.5); }
-            100% { transform: scale(1); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-        }
-
-        /* Typography */
-        h1 {
-            font-size: clamp(1.8rem, 6vw, 3rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 15px;
-            background: linear-gradient(to bottom, #fff 40%, var(--gold-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .tagline {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin-bottom: 35px;
-        }
-
-        /* Glass Cards */
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            padding: 25px;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 450px;
             margin-bottom: 30px;
+            border-radius: 50%;
+            border: 2px solid var(--gold-primary);
+            padding: 10px;
+            background: #050505;
+            object-fit: contain;
         }
 
-        .stats {
-            display: flex;
-            justify-content: space-around;
+        h1 {
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            color: var(--gold-primary);
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .stat-box h3 { color: var(--gold); font-size: 1.4rem; }
-        .stat-box p { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+        .subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 4px;
+            color: #ffffff;
+            opacity: 0.8;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
 
-        /* Action Button */
-        .btn-main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #0088cc, #00a2ed);
-            color: #fff;
+        /* Centered Stats Card like the image */
+        .glass-box {
+            background: var(--card-glass);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 40px 30px;
+            border-radius: 24px;
             width: 100%;
-            max-width: 350px;
-            padding: 18px;
+            margin-bottom: 40px;
+        }
+
+        .glass-box p {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+        }
+
+        .stat-item h3 { color: var(--gold-primary); font-size: 1.5rem; margin-bottom: 5px; }
+        .stat-item p { font-size: 0.7rem; text-transform: uppercase; color: #888; margin: 0; }
+
+        /* Gold Gradient Button */
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #000;
+            width: 100%;
+            padding: 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            box-shadow: 0 15px 30px rgba(0, 136, 204, 0.3);
-            transition: 0.3s;
-        }
-
-        .btn-main:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 136, 204, 0.5);
-        }
-
-        /* Footer Info */
-        footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #4b5563;
-        }
-
-        .disclaimer { max-width: 600px; margin: 20px auto; line-height: 1.4; padding: 0 10px; }
-        
-        .agency {
-            margin-top: 15px;
+            text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
         }
-        
-        .agency a { color: var(--gold); text-decoration: none; }
 
-        /* Mobile specific adjustments */
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        footer { margin-top: 50px; font-size: 0.7rem; color: #666; }
+        .agency { margin-top: 10px; font-weight: 600; }
+        .agency a { color: var(--gold-primary); text-decoration: none; }
+
         @media (max-width: 480px) {
-            .main-logo { width: 100px; height: 100px; }
-            .btn-main { font-size: 1rem; }
+            h1 { font-size: 1.8rem; }
+            .brand-logo { width: 100px; height: 100px; }
         }
     </style>
 </head>
 <body>
 
-<div class="glow" style="top: -10%; left: -10%;"></div>
-<div class="glow" style="bottom: -10%; right: -10%;"></div>
+<div class="main-container">
+    <img src="https://via.placeholder.com/150/000/D4AF37?text=PB" alt="WAY2LAABH" class="brand-logo">
 
-<div class="container">
-    <div class="logo-wrapper">
-        <img src="https://via.placeholder.com/150/D4AF37/000000?text=PB" alt="Pankaj Bhardwaj" class="main-logo">
-    </div>
+    <h1>PANKAJ BHARDWAJ</h1>
+    <div class="subtitle">WAY2LAABH™ Mastery</div>
 
-    <h1>𝐏𝐀𝐍𝐊𝐀𝐉 𝐁𝐇𝐀𝐑𝐃𝐖𝐀𝐉 <br> 𝐖𝐀𝐘𝟐𝐋𝐀𝐀𝐁𝐇™</h1>
-    
-    <p class="tagline">Institutional Grade Market Insights & Trading Strategies for Consistent Growth.</p>
-
-    <div class="glass-card">
-        <div class="stats">
-            <div class="stat-box">
-                <h3>10K+</h3>
-                <p>Traders</p>
+    <div class="glass-box">
+        <p>Master the markets and crush the odds. Join us for <b>real-time analysis</b> and exclusive institutional-grade trading strategies.</p>
+        
+        <div class="stats-row">
+            <div class="stat-item">
+                <h3>12.4k+</h3>
+                <p>Winners</p>
             </div>
-            <div class="stat-box" style="border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border); padding: 0 20px;">
-                <h3>90%</h3>
-                <p>Accuracy</p>
+            <div class="stat-item">
+                <h3>98.2%</h3>
+                <p>Hit Rate</p>
             </div>
-            <div class="stat-box">
-                <h3>FREE</h3>
-                <p>Entry</p>
+            <div class="stat-item">
+                <h3>LIVE</h3>
+                <p>Updates</p>
             </div>
         </div>
     </div>
 
-    <a href="https://t.me/+9Idal1eJo4kyMGM1" class="btn-main">
-        <i class="fab fa-telegram-plane"></i> JOIN OFFICIAL TELEGRAM
-    </a>
+    <a href="https://t.me/+9Idal1eJo4kyMGM1" class="btn-gold">Join The Winning Streak</a>
 
     <footer>
-        <p>&copy; 2026 𝐏𝐀𝐍𝐊𝐀𝐉 𝐁𝐇𝐀𝐑𝐃𝐖𝐀𝐉 𝐖𝐀𝐘𝟐𝐋𝐀𝐀𝐁𝐇™</p>
-        <div class="disclaimer">
-            <b>DISCLAIMER:</b> Not SEBI registered. All content is for educational purposes. Trading involves capital risk. Please consult your financial advisor.
-        </div>
+        <p>✦ 18+ | TRADE RESPONSIBLY ✦</p>
         <div class="agency">
-            ADS MANAGED BY <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank">NEXGROWW AGENCY</a>
+            Ads managed by <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank">NEXGROWW AGENCY</a>
         </div>
     </footer>
 </div>
