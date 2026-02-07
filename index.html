@@ -4,192 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PANKAJ BHARDWAJ | WAY2LAABH™</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
             --gold: #D4AF37;
-            --dark: #0f172a;
-            --slate: #1e293b;
-            --text: #f8fafc;
-            --telegram: #0088cc;
+            --gold-light: #f1d279;
+            --dark: #070b14;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
-        /* Basic Resets */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--dark); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body { 
+            background-color: var(--dark); 
+            color: #fff; 
+            overflow-x: hidden;
+            background: radial-gradient(circle at center, #1a2333 0%, #070b14 100%);
+        }
 
-        /* Responsive Navigation */
-        nav {
-            padding: 10px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(15, 23, 42, 0.95);
+        /* Animated Glow Backgrounds */
+        .glow {
             position: fixed;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            backdrop-filter: blur(10px);
+            width: 300px;
+            height: 300px;
+            background: var(--gold);
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: -1;
+            border-radius: 50%;
         }
 
-        .logo-container { display: flex; align-items: center; gap: 12px; }
-        .logo-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--gold); }
-        .brand-name { font-weight: 700; color: var(--gold); font-size: 0.9rem; letter-spacing: 1px; }
-
-        /* Hero Section - Mobile Optimized */
-        .hero {
-            padding: 140px 20px 60px;
+        /* Centered Layout */
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
             text-align: center;
-            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
         }
 
-        .hero h1 {
-            font-size: clamp(1.8rem, 8vw, 3.5rem);
-            margin-bottom: 15px;
-            background: linear-gradient(to right, #fff, var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Central Image Styling */
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .main-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            padding: 5px;
+            background: var(--dark);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 0 40px rgba(212, 175, 55, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: clamp(1.8rem, 6vw, 3rem);
             font-weight: 800;
             line-height: 1.2;
+            margin-bottom: 15px;
+            background: linear-gradient(to bottom, #fff 40%, var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero p { color: #94a3b8; font-size: clamp(1rem, 4vw, 1.2rem); max-width: 700px; margin: 0 auto 30px; padding: 0 10px; }
+        .tagline {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 35px;
+        }
 
-        /* Buttons */
-        .btn-tg {
-            display: inline-flex;
+        /* Glass Cards */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 450px;
+            margin-bottom: 30px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+
+        .stat-box h3 { color: var(--gold); font-size: 1.4rem; }
+        .stat-box p { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Action Button */
+        .btn-main {
+            display: flex;
             align-items: center;
-            gap: 10px;
-            background: var(--telegram);
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #0088cc, #00a2ed);
             color: #fff;
-            padding: 15px 30px;
+            width: 100%;
+            max-width: 350px;
+            padding: 18px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            box-shadow: 0 15px 30px rgba(0, 136, 204, 0.3);
             transition: 0.3s;
-            box-shadow: 0 8px 15px rgba(0, 136, 204, 0.3);
-        }
-        .btn-tg:hover { transform: translateY(-3px); box-shadow: 0 12px 20px rgba(0, 136, 204, 0.5); }
-
-        /* Sections */
-        .section { padding: 60px 5%; }
-        .section-title { text-align: center; color: var(--gold); margin-bottom: 40px; font-size: 1.8rem; font-weight: 700; }
-
-        /* Feature Cards Grid */
-        .grid-container { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
         }
 
-        .card {
-            background: var(--slate);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
-        }
-        .card i { font-size: 2rem; color: var(--gold); margin-bottom: 15px; }
-
-        /* Stats Bar */
-        .stats-bar {
-            background: rgba(212, 175, 55, 0.1);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 40px 20px;
-            gap: 20px;
-            text-align: center;
-        }
-        .stat-item h2 { color: var(--gold); font-size: 2rem; }
-
-        /* CTA Box */
-        .cta-section { padding: 40px 5%; }
-        .cta-box {
-            background: linear-gradient(135deg, var(--gold) 0%, #b8932d 100%);
-            padding: 40px 20px;
-            border-radius: 20px;
-            text-align: center;
-            color: var(--dark);
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 136, 204, 0.5);
         }
 
-        /* Footer */
-        footer { padding: 40px 20px; background: #070b14; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-        .disclaimer { font-size: 0.7rem; color: #4b5563; max-width: 800px; margin: 20px auto; }
-        .agency-link { margin-top: 20px; font-size: 0.8rem; color: #64748b; }
-        .agency-link a { color: var(--gold); text-decoration: none; font-weight: 600; }
+        /* Footer Info */
+        footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #4b5563;
+        }
 
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
-            .hero { padding-top: 120px; }
-            .section { padding: 40px 5%; }
+        .disclaimer { max-width: 600px; margin: 20px auto; line-height: 1.4; padding: 0 10px; }
+        
+        .agency {
+            margin-top: 15px;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .agency a { color: var(--gold); text-decoration: none; }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 480px) {
+            .main-logo { width: 100px; height: 100px; }
+            .btn-main { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo-container">
-        <img src="https://mahakalx.sbs/wp-content/uploads/2026/02/778gt.jpg" alt="Logo" class="logo-img">
-        <div class="brand-name">WAY2LAABH™</div>
-    </div>
-</nav>
+<div class="glow" style="top: -10%; left: -10%;"></div>
+<div class="glow" style="bottom: -10%; right: -10%;"></div>
 
-<header class="hero">
+<div class="container">
+    <div class="logo-wrapper">
+        <img src="https://via.placeholder.com/150/D4AF37/000000?text=PB" alt="Pankaj Bhardwaj" class="main-logo">
+    </div>
+
     <h1>𝐏𝐀𝐍𝐊𝐀𝐉 𝐁𝐇𝐀𝐑𝐃𝐖𝐀𝐉 <br> 𝐖𝐀𝐘𝟐𝐋𝐀𝐀𝐁𝐇™</h1>
-    <p>Premium Market Insights & Financial Strategies. We help you navigate the stock market with institutional-level precision.</p>
-    <a href="https://t.me/+9Idal1eJo4kyMGM1" class="btn-tg">
-        <i class="fab fa-telegram-plane"></i> JOIN FREE TELEGRAM
+    
+    <p class="tagline">Institutional Grade Market Insights & Trading Strategies for Consistent Growth.</p>
+
+    <div class="glass-card">
+        <div class="stats">
+            <div class="stat-box">
+                <h3>10K+</h3>
+                <p>Traders</p>
+            </div>
+            <div class="stat-box" style="border-left: 1px solid var(--glass-border); border-right: 1px solid var(--glass-border); padding: 0 20px;">
+                <h3>90%</h3>
+                <p>Accuracy</p>
+            </div>
+            <div class="stat-box">
+                <h3>FREE</h3>
+                <p>Entry</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://t.me/+9Idal1eJo4kyMGM1" class="btn-main">
+        <i class="fab fa-telegram-plane"></i> JOIN OFFICIAL TELEGRAM
     </a>
-</header>
 
-<div class="stats-bar">
-    <div class="stat-item"><h2>10K+</h2><p>Subscribers</p></div>
-    <div class="stat-item"><h2>90%</h2><p>Accuracy Rate</p></div>
-    <div class="stat-item"><h2>24/7</h2><p>Market Support</p></div>
+    <footer>
+        <p>&copy; 2026 𝐏𝐀𝐍𝐊𝐀𝐉 𝐁𝐇𝐀𝐑𝐃𝐖𝐀𝐉 𝐖𝐀𝐘𝟐𝐋𝐀𝐀𝐁𝐇™</p>
+        <div class="disclaimer">
+            <b>DISCLAIMER:</b> Not SEBI registered. All content is for educational purposes. Trading involves capital risk. Please consult your financial advisor.
+        </div>
+        <div class="agency">
+            ADS MANAGED BY <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank">NEXGROWW AGENCY</a>
+        </div>
+    </footer>
 </div>
-
-<section class="section">
-    <h2 class="section-title">What We Offer</h2>
-    <div class="grid-container">
-        <div class="card">
-            <i class="fas fa-chart-pie"></i>
-            <h3>Equity & Options</h3>
-            <p>Daily setups for Nifty, BankNifty, and high-momentum stocks.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-university"></i>
-            <h3>Wealth Building</h3>
-            <p>Long-term investment picks designed for consistent portfolio growth.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-chalkboard-teacher"></i>
-            <h3>Live Mentorship</h3>
-            <p>Understand the 'Why' behind every trade with our detailed analysis.</p>
-        </div>
-    </div>
-</section>
-
-<section class="cta-section">
-    <div class="cta-box">
-        <h2>Ready to Master the Markets?</h2>
-        <p>Join the fastest-growing community of profitable traders today.</p>
-        <a href="https://t.me/+9Idal1eJo4kyMGM1" class="btn-tg" style="background: var(--dark);">GET INSTANT ACCESS</a>
-    </div>
-</section>
-
-<footer>
-    <p>&copy; 2026 𝐏𝐀𝐍𝐊𝐀𝐉 𝐁𝐇𝐀𝐑𝐃𝐖𝐀𝐉 𝐖𝐀𝐘𝟐𝐋𝐀𝐀𝐁𝐇™</p>
-    <div class="disclaimer">
-        <b>DISCLAIMER:</b> We are not SEBI registered. All posts are for educational purposes only. Trading involves risk; please consult your financial advisor before investing.
-    </div>
-    <div class="agency-link">
-        ADS MANAGED BY <a href="https://telegram.me/+TRlJl628l-FkMWE9" target="_blank">NEXGROWW AGENCY</a>
-    </div>
-</footer>
 
 </body>
 </html>
